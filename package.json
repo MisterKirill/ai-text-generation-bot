@@ -1,0 +1,17 @@
+{
+  "name": "ai-text-generation-bot",
+  "version": "1.0.0",
+  "description": "text generation discord bot using cheburek-davinci model",
+  "main": "index.js",
+  "repository": "https://github.com/MisterKirill/ai-text-generation-bot.git",
+  "author": "myst",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.2.2",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  }
+}
