@@ -1,3 +1,6 @@
 .env
 model
 node_modules
+
+dl_messages.js
+data.txt

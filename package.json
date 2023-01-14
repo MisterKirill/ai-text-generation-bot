@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^1.2.2",
+    "discord-fetch-all": "^3.0.2",
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3"
   }
