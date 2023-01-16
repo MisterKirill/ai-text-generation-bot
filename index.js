@@ -23,13 +23,13 @@ bot.on('messageCreate', msg => {
         }).then(res => {
             msg.reply(res.data[0].generated_text)
         }).catch(err => {
-            if(err.data && err.data.estimated_time) {
-                msg.reply(`Модель загружается, подождите ещё примерно ${Math.round(err.data.estimated_time)} секунд...`)
+            if(err.response.data && err.response.data.estimated_time) {
+                msg.reply(`Модель загружается, подождите ещё примерно ${Math.round(err.response.data.estimated_time)} секунд...`)
                 return
             }
 
             console.log(err)
-            msg.reply('Ошибка апи hugging face напиши мисту')
+            msg.reply('Ошибка апи hugging face')
         })
     }
 })
