@@ -1,6 +1,7 @@
 require('dotenv').config()
 const { Client, GatewayIntentBits } = require('discord.js')
 const axios = require('axios').default
+import 'os'
 
 const bot = new Client({
     intents: [
@@ -21,15 +22,15 @@ bot.on('messageCreate', msg => {
                 'Authorization': `Bearer ${process.env.HF_TOKEN}`
             }
         }).then(res => {
-            msg.reply(res.data[0].generated_text)
+            msg.reply(res.data[0].generated_text.replace(msg.content, '').replace('>', '').replace(/^, $/, '').replace(/^. $/, ''))
         }).catch(err => {
             if(err.response.data && err.response.data.estimated_time) {
-                msg.reply(`Модель загружается, подождите ещё примерно ${Math.round(err.response.data.estimated_time)} секунд...`)
+                msg.reply(`> Модель загружается, подождите немного...`)
                 return
             }
 
             console.log(err)
-            msg.reply('Ошибка апи hugging face')
+            msg.reply('> Ошибка апи hugging face')
         })
     }
 })
