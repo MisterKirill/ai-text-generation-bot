@@ -1,7 +1,6 @@
 require('dotenv').config()
 const { Client, GatewayIntentBits } = require('discord.js')
 const axios = require('axios').default
-import 'os'
 
 const bot = new Client({
     intents: [
